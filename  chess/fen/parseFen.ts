@@ -1,5 +1,3 @@
-import {ColorEnum} from "@/ chess/types/enums/color";
-import {PieceEnum} from "@/ chess/types/enums/piece";
 import {fenToPiece} from "@/ chess/helpers";
 import PieceType from "@/ chess/types/interfaces/piece";
 
@@ -22,7 +20,7 @@ export function loadFromFEN(
                 if (!pieceInfo) continue;
 
                 setPiece({
-                    id: col + fenRow,
+                    id: `${col}_${fenRow}_${char}`,
                     color: pieceInfo.color,
                     piece: pieceInfo.piece,
                     position: {

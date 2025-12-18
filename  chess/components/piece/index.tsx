@@ -8,7 +8,7 @@ import {PieceEnum} from "@/ chess/types/enums/piece";
 
 export default function Piece({ Piece }: { Piece: PieceType }) {
 
-    const { boardSize, boardRef, movePiece, pieces, setLastSelected, turn, isWhiteKingChecked, isBlackKingChecked, isMate} = useBoard();
+    const { boardSize, boardRef, movePiece, setLastSelected, turn, isWhiteKingChecked, isBlackKingChecked, isMate} = useBoard();
 
     const pieceRef = useRef<HTMLDivElement | null>(null);
 
@@ -61,7 +61,6 @@ export default function Piece({ Piece }: { Piece: PieceType }) {
 
         document.removeEventListener("mousemove", followMouse);
         document.removeEventListener("mouseup", handleMouseUp);
-
     }
 
     const centralizePiece = () => {
@@ -77,7 +76,7 @@ export default function Piece({ Piece }: { Piece: PieceType }) {
 
     return (
         <div
-            className={`absolute flex justify-center items-center select-none small
+            className={`absolute flex justify-center items-center select-none small transition-all duration-300
              ${dragged ? "z-50": "z-auto"} ${dragged ? "cursor-grabbing": ""}
              ${turn[0].toLowerCase() === Piece.color && !isMate ? "cursor-grab": ""}
              ${checked() && !isMate ? "shaking": ""}
