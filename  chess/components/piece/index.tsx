@@ -76,7 +76,7 @@ export default function Piece({ Piece }: { Piece: PieceType }) {
 
     return (
         <div
-            className={`absolute flex justify-center items-center select-none small transition-all duration-300
+            className={`absolute flex justify-center items-center select-none small
              ${dragged ? "z-50": "z-auto"} ${dragged ? "cursor-grabbing": ""}
              ${turn[0].toLowerCase() === Piece.color && !isMate ? "cursor-grab": ""}
              ${checked() && !isMate ? "shaking": ""}
